@@ -7,6 +7,8 @@ session_start();
     <meta charset="UTF-8">
     <title>CryptoX - Kontakt</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/Clogo.png">
+
 </head>
 <body>
 

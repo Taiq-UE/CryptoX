@@ -23,6 +23,7 @@ if (isset($_SESSION['error'])) {
     <meta charset="UTF-8">
     <title>CryptoX - Wykres</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/Clogo.png">
 </head>
 <body>
 
@@ -254,7 +255,6 @@ if (isset($_SESSION['error'])) {
                     close: close,
                 });
 
-                // Aktualizacja tytułu strony
                 document.title = close + ' | ' + currencyPair.toUpperCase() + ' | CryptoX';
             }
         };

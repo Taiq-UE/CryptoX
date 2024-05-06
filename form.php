@@ -50,6 +50,7 @@ arsort($results);
     <meta charset="UTF-8">
     <title>CryptoX - Formularz</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/Clogo.png">
 </head>
 <body>
 

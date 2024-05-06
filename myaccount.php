@@ -76,6 +76,7 @@ if (isset($_SESSION['message'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CryptoX - Moje konto</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/Clogo.png">
 </head>
 <body>
 
