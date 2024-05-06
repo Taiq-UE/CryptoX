@@ -1,0 +1,609 @@
+body, h1, p {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+body {
+    min-height: 100vh;
+    background-color: palegoldenrod;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #eee8aa;
+    font-weight: bold;
+}
+
+.logo-container {
+    width: 300px;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img {
+    max-width: 200px;
+    height: auto;
+}
+
+.company-text h2 {
+    font-size: 120px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #eee8aa;
+    padding: 10px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: orange;
+}
+
+.company-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*padding: 20px;*/
+}
+
+.company-image {
+    background-image: url("images/backround8.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 92vh;
+    position: relative;
+}
+
+.company-text {
+    text-align: center;
+    color: #333333;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    font-size: 75px;
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+    -webkit-text-stroke: 1px palegoldenrod;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form-container form {
+    flex: 0 0 45%;
+    box-sizing: border-box;
+}
+
+.buy-button {
+    background-color: #4CAF50 !important;
+    color: palegoldenrod !important;
+    padding: 15px 32px !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    font-size: 16px !important;
+    margin: 4px 2px !important;
+    cursor: pointer !important;
+}
+
+.sell-button {
+    background-color: #f44336 !important;
+    color: palegoldenrod !important;
+    padding: 15px 32px !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    font-size: 16px !important;
+    margin: 4px 2px !important;
+    cursor: pointer !important;
+}
+
+.buy-button:hover {
+    background-color: #388E3C !important;
+}
+
+.sell-button:hover {
+    background-color: #d32f2f !important;
+}
+
+form label {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #333333;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    background-color: palegoldenrod;
+}
+
+form input[type="text"], form input[type="email"], form input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: palegoldenrod;
+    font-family: Arial, sans-serif;
+}
+
+form input[type="submit"] {
+    width: 100%;
+    background-color: orange;
+    color: palegoldenrod;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+form input[type="submit"]:hover {
+    background-color: darkorange;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(100% / 3.5), 1fr));
+    gap: 20px;
+    background-color: palegoldenrod;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.card img {
+    width: 100px;
+    height: auto;
+}
+
+.card-title {
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.card-text {
+    font-family: "Arial", sans-serif;
+    margin: 10px 0;
+    padding: 30px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.card-link {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: "Arial", sans-serif;
+    color: black;
+    transition: background-color 0.3s ease;
+}
+
+.card-link:hover {
+    color: orange;
+}
+
+#chart {
+    background-color: transparent;
+    direction: rtl;
+    overflow-x: hidden;
+}
+
+#chart-container {
+    direction: ltr;
+}
+
+#currency-select {
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333333;
+    font-family: Arial, sans-serif;
+    background-color: palegoldenrod;
+}
+
+#currency-select option {
+    background-color: palegoldenrod;
+    color: #333333;
+    padding: 10px;
+}
+
+#interval-select {
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333333;
+    font-family: Arial, sans-serif;
+    background-color: palegoldenrod;
+}
+
+#interval-select option {
+    background-color: palegoldenrod;
+    color: #333333;
+    padding: 10px;
+}
+
+.currency-select {
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #333333;
+    padding: 5px;
+    font-size: 16px;
+    margin: 10px 0;
+    background-color: palegoldenrod;
+}
+
+.amount-input {
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #333333;
+    padding: 5px;
+    font-size: 16px;
+    margin: 10px 0;
+    background-color: palegoldenrod;
+
+}
+
+.account-info {
+    padding: 20px;
+    border: 1px solid #333;
+    margin: 20px;
+    color: #333333;
+    background-color: palegoldenrod;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.account-info h2 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.account-info p {
+    font-size: 18px;
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 10px;
+
+}
+
+.transaction-forms {
+    display: flex;
+    justify-content: space-between;
+}
+
+.deposit, .withdraw {
+    flex: 1 0 auto;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #333;
+    background-color: palegoldenrod;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.deposit {
+    margin-right: 5%;
+}
+
+.withdraw {
+    margin-left: 5%;
+}
+
+.deposit h2, .withdraw h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.deposit label, .withdraw label {
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.deposit input[type="number"], .withdraw input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.deposit input[type="submit"], .withdraw input[type="submit"] {
+    width: 100%;
+    background-color: orange;
+    color: palegoldenrod;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.deposit input[type="submit"]:hover {
+    background-color: darkorange;
+}
+
+.account-assets .total-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    background-color: #eee8aa;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.account-assets h2 {
+    font-size: 24px;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.account-assets p {
+    font-size: 18px;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+#plans {
+    display: flex;
+    justify-content: space-around;
+}
+
+.plan {
+    width: 20%;
+    border: 2px solid #333;
+    border-radius: 10px;
+    font-family: "Arial", sans-serif;
+
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.half-width {
+    width: 48%;
+}
+
+#doradca table {
+    width: 100%;
+    font-family: "Arial", sans-serif;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+#doradca th, #doradca td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: left;
+}
+
+#doradca th {
+    background-color: #333;
+    color: #eee8aa;
+}
+
+#doradca tr:nth-child(even) {
+    background-color: orange;
+}
+
+section h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+input[type="tel"], textarea {
+    background-color: palegoldenrod;
+    border: 1px solid #333333;
+}
+
+#about {
+    margin: 20px;
+    padding: 20px;
+    font-family: "Arial", sans-serif;
+    background-color: palegoldenrod;
+    border-radius: 10px;
+    color: #333;
+}
+
+#about h2 {
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 16px;
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+}
+
+#contact-info {
+    font-family: "Arial", sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: palegoldenrod;
+    border-radius: 10px;
+    color: #333;
+}
+
+#contact-info h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-item img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.contact-item p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.centered-table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    font-family: "Arial", sans-serif;
+    border-collapse: collapse;
+    margin-top: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.centered-table th, .centered-table td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: left;
+}
+
+.centered-table th {
+    background-color: #333;
+    color: #eee8aa;
+}
+
+.centered-table tr:nth-child(even) {
+    background-color: orange;
+}
+
+footer {
+    background-color: #333;
+    color: #eee8aa;
+    padding: 10px;
+    margin-top: auto;
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    flex-shrink: 0;
+}
