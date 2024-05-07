@@ -119,7 +119,7 @@ if (isset($_SESSION['message'])) {
             <th>Ilość</th>
         </tr>
         <?php foreach ($assets as $currency => $amount): ?>
-            <?php if ($currency !== 'id' && $currency !== 'user_id'): ?>
+            <?php if ($currency !== 'id' && $currency !== 'user_id' && $amount > 0): ?>
                 <tr>
                     <td><?php echo $currency; ?></td>
                     <td>
