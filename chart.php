@@ -16,6 +16,19 @@ if (isset($_SESSION['error'])) {
     unset($_SESSION['error']);
 }
 
+require 'DatabaseConnect.php';
+$databaseConnect = new DatabaseConnect();
+$pdo = $databaseConnect->getPdo();
+$username = $_SESSION['username'];
+
+$query = $pdo->prepare("SELECT id FROM users WHERE username = :username");
+$query->execute(['username' => $username]);
+$userId = $query->fetchColumn();
+
+$query = $pdo->prepare("SELECT * FROM wallets WHERE user_id = :user_id");
+$query->execute(['user_id' => $userId]);
+$assets = $query->fetch(PDO::FETCH_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,12 +81,34 @@ if (isset($_SESSION['error'])) {
         <option value="shibusdt">SHIB/USDT</option> <!-- Shiba Inu -->
     </select>
     <select id="interval-select">
-        <option value="1s">1s</option>
+<!--        <option value="1s">1s</option>-->
         <option value="1m">1m</option>
         <option value="1h">1h</option>
         <option value="1d">1d</option>
         <option value="1w">1w</option>
     </select>
+
+    <div class="account-assets">
+        <h2>Twoje aktywa</h2>
+        <table class="centered-table">
+            <tr>
+                <th>Waluta</th>
+                <th>Ilość</th>
+            </tr>
+            <?php foreach ($assets as $currency => $amount): ?>
+                <?php if ($currency !== 'id' && $currency !== 'user_id' && $amount > 0): ?>
+                    <tr>
+                        <td><?php echo $currency; ?></td>
+                        <td>
+                            <?php
+                            echo rtrim(rtrim($amount, '0'), '.');
+                            ?>
+                        </td>
+                    </tr>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </table>
+    </div>
 
     <div class="form-container">
         <form action="buy.php" method="post">
@@ -192,7 +227,7 @@ if (isset($_SESSION['error'])) {
     let socket;
 
     var currencyPair = 'btcusdt';
-    var interval = '1s';
+    var interval = '1m';
 
     var url = 'https://api.binance.com/api/v3/klines?symbol=' + currencyPair.toUpperCase() + '&interval=' + interval;
 
@@ -219,7 +254,7 @@ if (isset($_SESSION['error'])) {
             socket.close();
         }
 
-        socket = new WebSocket('wss://stream.binance.com:9443/ws/' + currencyPair + '@kline_' + interval);
+        socket = new WebSocket('wss://fstream.binance.com/ws/' + currencyPair + '@kline_' + interval);
 
         socket.onopen = function(event) {
             console.log('WebSocket connection opened:', event);
@@ -269,7 +304,7 @@ if (isset($_SESSION['error'])) {
     }
 
     var defaultCurrencyPair = 'btcusdt';
-    var defaultInterval = '1s';
+    var defaultInterval = '1m';
 
     async function fetchData(currencyPair, interval) {
         var url = 'https://api.binance.com/api/v3/klines?symbol=' + currencyPair.toUpperCase() + '&interval=' + interval;
@@ -315,7 +350,7 @@ if (isset($_SESSION['error'])) {
         fetchDataAndConnectWebSocket(currency, this.value);
     });
 
-    connectToWebSocket('btcusdt', '1s');
+    connectToWebSocket('btcusdt', '1m');
 </script>
 
 <footer>
